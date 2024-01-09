@@ -10,6 +10,10 @@ const MainBox = styled.div`
   width: 60%;
   margin: 3rem;
   padding: 4rem;
+    @media screen and (max-width: 480px) {
+    margin: 0.5rem;
+    padding: 1rem;
+  }
 `;
 const AddButton = styled.button`
   font-weight: 900;
