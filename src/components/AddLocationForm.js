@@ -40,13 +40,6 @@ const InputField = styled.div`
   min-width: 330px;
 `;
 
-const Input = styled.input`
-  width: 80%;
-  padding: 8px;
-  border-radius: 23px;
-  margin-bottom: 10px;
-`;
-
 const Select = styled.select`
   width: 80%;
   padding: 8px 15px;
@@ -81,7 +74,6 @@ const AddLocationForm = ({ visible, onClose }) => {
   const [countries, setCountries] = useState([]);
   const [regions, setRegions] = useState([]);
   const [selectedRegion, setSelectedRegion] = useState("");
-  const [countryData, setCountryData] = useState(null);
 
   const modalRef = useRef(null);
   const dispatch = useDispatch();
@@ -89,7 +81,7 @@ const AddLocationForm = ({ visible, onClose }) => {
   useEffect(() => {
     const sampleRegions = ["Asia", "Europe", "Africa", "Americas", "Oceania"];
     setRegions(sampleRegions);
-  }, []);
+  }, [formik]);
 
   const formik = useFormik({
     initialValues: {
@@ -155,18 +147,6 @@ const AddLocationForm = ({ visible, onClose }) => {
         });
     }
   }, [selectedRegion]);
-
-  useEffect(() => {
-    if (countryData) {
-      formik.setValues({
-        ...formik.values,
-        currency: countryData.currency,
-        callingCode: countryData.callingCode,
-        countryRegion: countryData.countryRegion,
-        // ...
-      });
-    }
-  }, [countryData]);
 
   const handleRegionChange = (event) => {
     const selectedRegion = event.target.value;
