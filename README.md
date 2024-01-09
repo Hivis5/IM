@@ -17,10 +17,10 @@ You may also see any lint errors in the console.
 
 ### Library used
 
-ReactJS
-Create-react-app
-React-redux
-Formik
-reduxjs/toolkit
-yup
-styled-components
+ReactJS,
+Create-react-app,
+React-redux,
+Formik,
+reduxjs/toolkit,
+yup,
+styled-components,
