@@ -34,7 +34,7 @@ const HomePage = () => {
   };
   return (
     <MainBox>
-      <Heading>Inventroy</Heading>
+      <Heading>Inventory</Heading>
       <div>
         <NavigationBar />
         <AddButton onClick={() => setModalVisible(true)}>+</AddButton>
