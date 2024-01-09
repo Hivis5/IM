@@ -78,10 +78,7 @@ const AddLocationForm = ({ visible, onClose }) => {
   const modalRef = useRef(null);
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    const sampleRegions = ["Asia", "Europe", "Africa", "Americas", "Oceania"];
-    setRegions(sampleRegions);
-  }, [formik]);
+
 
   const formik = useFormik({
     initialValues: {
@@ -128,6 +125,10 @@ const AddLocationForm = ({ visible, onClose }) => {
       }
     },
   });
+  useEffect(() => {
+    const sampleRegions = ["Asia", "Europe", "Africa", "Americas", "Oceania"];
+    setRegions(sampleRegions);
+  }, []);
 
   useEffect(() => {
     if (selectedRegion) {
