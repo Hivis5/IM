@@ -46,20 +46,7 @@ const EditButton = styled.button`
 `;
 
 const InventoryTable = () => {
-  const [rowData, setRowData] = useState({
-    region: "",
-    country: "",
-    currency: "",
-    callingCode: "",
-  });
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setRowData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
-  };
   const { locations } = useSelector((state) => state.location);
   const handleEdit = (index) => {
     console.log("Edit button clicked for index:", index);
